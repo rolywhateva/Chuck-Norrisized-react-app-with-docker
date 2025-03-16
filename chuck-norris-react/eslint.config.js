@@ -1,10 +1,11 @@
 import js from '@eslint/js';
-import globals from 'globals';
+import prettierPlugin from 'eslint-plugin-prettier/recommended';
 import reactHooks from 'eslint-plugin-react-hooks';
 import reactRefresh from 'eslint-plugin-react-refresh';
-import tseslint from 'typescript-eslint';
 import simpleImportSort from 'eslint-plugin-simple-import-sort';
-import  prettierPlugin from 'eslint-plugin-prettier';
+import globals from 'globals';
+import tseslint from 'typescript-eslint';
+
 export default tseslint.config(
   { ignores: ['dist'] },
   {
@@ -13,10 +14,8 @@ export default tseslint.config(
       //  ...tseslint.configs.recommendedTypeChecked,
       // Alternatively, use this for stricter rules
       ...tseslint.configs.strictTypeChecked,
-      'plugin:prettier/recommended',
       // Optionally, add this for stylistic rules
       ...tseslint.configs.stylisticTypeChecked,
-      ...prettierPlugin,
       {
         languageOptions: {
           ecmaVersion: 2020,
@@ -28,14 +27,16 @@ export default tseslint.config(
             tsconfigRootDir: import.meta.dirname
           }
         }
-      }
+      },
+      prettierPlugin
     ],
     files: ['**/*.{ts,tsx}'],
 
     plugins: {
       'react-hooks': reactHooks,
       'react-refresh': reactRefresh,
-      'simple-import-sort': simpleImportSort
+      'simple-import-sort': simpleImportSort,
+      'prettier/prettier': prettierPlugin
     },
     rules: {
       ...reactHooks.configs.recommended.rules,
@@ -46,9 +47,7 @@ export default tseslint.config(
         }
       ],
       'react-refresh/only-export-components': ['warn', { allowConstantExport: true }],
-      "prettier/prettier": [
-        "error"
-      ],
+      'prettier/prettier': ['warn'],
       'simple-import-sort/imports': [
         'warn',
         {
