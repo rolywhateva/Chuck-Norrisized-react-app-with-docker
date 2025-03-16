@@ -3,7 +3,7 @@ export class HttpError extends Error {
 
   constructor(statusCode: number, message: string) {
     super(message);
-    this.name = "Http Error";
+    this.name = 'Http Error';
     this.statusCode = statusCode;
   }
 }

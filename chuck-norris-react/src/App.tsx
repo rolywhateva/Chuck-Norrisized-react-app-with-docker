@@ -1,11 +1,11 @@
-import { Navigate,Route, Routes } from "react-router";
+import { Navigate, Route, Routes } from 'react-router';
 
-import { JokesSearchPage } from "./pages/jokes-search/jokes-search-page";
-import { MainPage } from "./pages/main/main-page";
-import { NotFoundPage } from "./pages/not-found/not-found-page";
-import { RandomJokesPage } from "./pages/random-jokes/random-jokes-page";
+import { JokesSearchPage } from './pages/jokes-search/jokes-search-page';
+import { MainPage } from './pages/main/main-page';
+import { NotFoundPage } from './pages/not-found/not-found-page';
+import { RandomJokesPage } from './pages/random-jokes/random-jokes-page';
 
-import "./main.css";
+import './main.css';
 
 function App() {
   return (

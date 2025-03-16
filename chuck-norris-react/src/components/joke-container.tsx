@@ -1,4 +1,4 @@
-import { IJoke } from "@/models/joke";
+import { IJoke } from '@/models/joke';
 
 interface IJokeContainerProps {
   isLoading: boolean;
@@ -16,13 +16,13 @@ export function JokeContainer(props: IJokeContainerProps) {
       />
 
       <div className="space-y-2 text-center sm:text-left">
-          <q className="space-y-0.5 font-medium w-50 text-gray-500 text-center">
-            {props.isLoading && "Getting Joke ... "}
+        <q className="space-y-0.5 font-medium w-50 text-gray-500 text-center">
+          {props.isLoading && 'Getting Joke ... '}
 
-            {!!props.error && "Something went wrong ..."}
+          {!!props.error && 'Something went wrong ...'}
 
-            {props.joke?.value}
-          </q>
+          {props.joke?.value}
+        </q>
       </div>
     </div>
   );

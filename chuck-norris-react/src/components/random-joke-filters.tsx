@@ -1,24 +1,24 @@
-import { ChuckButton } from "@/ui/chuck-button";
-import { ChuckSelect } from "@/ui/chuck-select";
+import { ChuckButton } from '@/ui/chuck-button';
+import { ChuckSelect } from '@/ui/chuck-select';
 
 const chuckNorrisCategories: Record<string, string> = {
-  random: "🎲",
-  animal: "🐻",
-  career: "💼",
-  celebrity: "🎬",
-  dev: "💻",
-  explicit: "🔞",
-  fashion: "👗",
-  food: "🍔",
-  history: "📜",
-  money: "💰",
-  movie: "🎥",
-  music: "🎵",
-  political: "🗳️",
-  religion: "⛪",
-  science: "🔬",
-  sport: "⚽",
-  travel: "✈️",
+  random: '🎲',
+  animal: '🐻',
+  career: '💼',
+  celebrity: '🎬',
+  dev: '💻',
+  explicit: '🔞',
+  fashion: '👗',
+  food: '🍔',
+  history: '📜',
+  money: '💰',
+  movie: '🎥',
+  music: '🎵',
+  political: '🗳️',
+  religion: '⛪',
+  science: '🔬',
+  sport: '⚽',
+  travel: '✈️'
 };
 
 export interface IRandomJokeFiltersProps {
@@ -47,9 +47,7 @@ export function RandomJokeFilters(props: IRandomJokeFiltersProps) {
         )}
       />
 
-      <ChuckButton onClick={props.onRepeatClick}>
-        Get from category
-      </ChuckButton>
+      <ChuckButton onClick={props.onRepeatClick}>Get from category</ChuckButton>
 
       {/* <ChuckButton onClick={props.onRandomClick}> Get random </ChuckButton> */}
     </div>

@@ -1,3 +1,3 @@
 export function JokesSearchPage() {
-    return <h1> Jokes search page </h1>
+  return <h1> Jokes search page </h1>;
 }

@@ -1,4 +1,4 @@
-import { ReactNode } from "react";
+import { ReactNode } from 'react';
 
 export interface IChuckSelect<ItemType> {
   values: ItemType[] | null;
@@ -22,10 +22,7 @@ export function ChuckSelect<ItemType>(props: IChuckSelect<ItemType>) {
 
   return (
     <div className="flex justify-center align-center items-center gap-3">
-      <label
-        htmlFor={props.selectName}
-        className="block font-medium text-gray-700"
-      >
+      <label htmlFor={props.selectName} className="block font-medium text-gray-700">
         {props.labelText}
       </label>
 

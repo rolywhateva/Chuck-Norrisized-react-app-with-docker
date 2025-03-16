@@ -1,11 +1,11 @@
-import { useEffect } from "react";
+import { useEffect } from 'react';
 
-import { JokeContainer } from "@/components/joke-container";
-import { RandomJokeFilters } from "@/components/random-joke-filters";
-import { ICategory } from "@/models/category";
+import { JokeContainer } from '@/components/joke-container';
+import { RandomJokeFilters } from '@/components/random-joke-filters';
+import { ICategory } from '@/models/category';
 
-import { RadomCategory, useCategories } from "./use-categories";
-import { useJokes } from "./use-jokes";
+import { RadomCategory, useCategories } from './use-categories';
+import { useJokes } from './use-jokes';
 
 export function RandomJokesPage() {
   const {
@@ -13,28 +13,25 @@ export function RandomJokesPage() {
     dispatchCategories,
     selectedCategory,
     setSelectedCategory,
-    getCategories,
+    getCategories
   } = useCategories();
 
-  const { jokeState, dispatchJoke, getRandomJoke, getJokeFromCategory } =
-    useJokes();
+  const { jokeState, dispatchJoke, getRandomJoke, getJokeFromCategory } = useJokes();
 
   useEffect(() => {
     const getInitialData = async () => {
       await getCategories();
 
-      dispatchJoke({ actionType: "isLoading" });
+      dispatchJoke({ actionType: 'isLoading' });
 
       await getRandomJoke();
-    }
-    
+    };
+
     void getInitialData();
   }, [dispatchCategories, dispatchJoke, getCategories, getRandomJoke]);
 
   const getNewJoke = (category: ICategory) =>
-    category === RadomCategory
-      ? getRandomJoke()
-      : getJokeFromCategory(category);
+    category === RadomCategory ? getRandomJoke() : getJokeFromCategory(category);
 
   async function onRepeatClick() {
     await getNewJoke(selectedCategory);
